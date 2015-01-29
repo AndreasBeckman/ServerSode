@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Universitetsbiblioteket";
+}
+
+
+<h1>UniversitetsBiblioteket</h1>
+
+@using (Html.BeginForm("Library", "Library", FormMethod.Get))
+{
+   <button>Logga in</button>
+    <button>Bläddra</button>
+    <button>Sök</button>
+    
+    <div>
+        <input type="text" name="searchbook" placeholder="Sök på titel eller författare" style="width:200px"/>
+        <input type="submit" value="search"/>
+
+    </div>
+}
