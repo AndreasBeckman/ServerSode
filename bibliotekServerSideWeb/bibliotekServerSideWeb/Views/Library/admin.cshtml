@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Universitetsbiblioteket";
+}
+
+
+
+<div>
+    <h1>Admin</h1>
+</div>
+
+@using (Html.BeginForm("Admin", "Library", FormMethod.Get))
+{
+     <input type="submit" value="Author Adminpage" style="width:200px"/>
+     <input type="submit" value="Book Adminpage" style="width:200px"/>
+     <input type="submit" value="Borrower Adminpage" style="width:200px"/>
+}

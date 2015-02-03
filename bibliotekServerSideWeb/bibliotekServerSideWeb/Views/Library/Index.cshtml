@@ -3,17 +3,29 @@
 }
 
 
-<h1>UniversitetsBiblioteket</h1>
 
-@using (Html.BeginForm("Library", "Library", FormMethod.Get))
-{
-   <button>Logga in</button>
-    <button>Bläddra</button>
-    <button>Sök</button>
-    
+<div style="text-align:center">
+
+    <h1>UniversitetsBiblioteket</h1>
+
     <div>
-        <input type="text" name="searchbook" placeholder="Sök på titel eller författare" style="width:200px"/>
-        <input type="submit" value="search"/>
+        @using (Html.BeginForm("Login", "Library", FormMethod.Get))
+        {
+            <input type="submit" value="Login here" style="width:100px"/>
+        }
 
+        @using (Html.BeginForm("Browse", "Library", FormMethod.Get))
+        {
+            <input type="submit" value="Browse" style="width:100px"/>
+        }
     </div>
-}
+
+    <div>
+        @using (Html.BeginForm("Search", "Library", FormMethod.Get))
+        {
+            <input type="text" name="query" placeholder="Sök på titel eller författare" style="width:200px" />
+            <input type="submit" value="Sök" />
+        }
+    </div>
+
+</div>

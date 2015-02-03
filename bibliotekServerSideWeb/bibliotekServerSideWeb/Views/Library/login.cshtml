@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Universitetsbiblioteket";
+}
+
+
+@using (Html.BeginForm("Login", "Library", FormMethod.Get))
+{
+    <div style="text-align:center; margin-top:150px;">
+
+        <h1>Login!</h1>
+        <form>
+
+            <div>        
+                   
+                <div><input type="text" name="user" placeholder="Username" /></div>
+                <div><input type="text" name="pass" placeholder="Password" /></div>
+
+                <div>
+                    <input type="radio" value="borrower" name="permission" />Borrower
+                    <input type="radio" value="admin"    name="permission" />Admin
+                </div>
+
+                <input type="submit" value="Login" />
+
+            </div>
+            
+        </form>
+
+    </div>
+}

@@ -217,6 +217,11 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Library\Index.cshtml" />
+    <Content Include="Views\Library\search.cshtml" />
+    <Content Include="Views\Library\login.cshtml" />
+    <Content Include="Views\Library\browse.cshtml" />
+    <Content Include="Views\Library\borrower.cshtml" />
+    <Content Include="Views\Library\admin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
