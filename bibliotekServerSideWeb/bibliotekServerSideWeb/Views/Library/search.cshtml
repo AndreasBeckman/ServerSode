@@ -3,12 +3,12 @@
 }
 
 
-@using (Html.BeginForm("Library", "Library", FormMethod.Get))
+@using (Html.BeginForm("Search", "Library", FormMethod.Get))
 {
     <div style="margin-left:20px; margin-right:200px;">
         <h1>Sök</h1>
         <input type="text" name="query" placeholder="Sök på titel eller författare" style="width:200px" />
-        <input type="submit" value="Sök" />
+        <input type="submit" value="Search" />
     </div>
     
     <div style="border:solid 5px red; float:left">
