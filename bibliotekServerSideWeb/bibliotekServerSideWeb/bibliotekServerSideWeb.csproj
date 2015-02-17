@@ -223,6 +223,10 @@
     <Content Include="Views\Library\browse.cshtml" />
     <Content Include="Views\Library\borrower.cshtml" />
     <Content Include="Views\Library\admin.cshtml" />
+    <Content Include="Views\Library\AuthorAdmin.cshtml" />
+    <Content Include="Views\Library\BookAdmin.cshtml" />
+    <Content Include="Views\Library\BorrowerAdmin.cshtml" />
+    <Content Include="Views\Library\BookDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
