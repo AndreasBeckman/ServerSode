@@ -4,18 +4,30 @@
 
 #all {
     height:500px;
-    border:1px solid green;
     margin:10px 20% 20%;
 }
 
 #menuHolder {
     margin-top:50px;
-    border:1px solid black;
     height:25px;
+    background-color:#7CA4FC;
+    border:1px solid #7CA4FC;
 }
 
 .menuBtn {
     float:left;
+    width:100px;
+    text-align:center;
+    color:black;
+    height:auto;
+    text-decoration:none;
+    border:1px solid #7CA4FC;
+    height:23px;
+}
+
+.menuBtn:hover {
+    background-color:white;
+    border:1px solid white;
 }
 
 .menuSearchBar {
@@ -28,6 +40,5 @@
 }
 
 #content {
-    border:1px solid red;
     height:300px;
 }

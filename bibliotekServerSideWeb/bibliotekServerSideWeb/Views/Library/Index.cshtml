@@ -9,23 +9,31 @@
 
         <div id="menuHolder">
             <div>
-                <div class="menuBtn">
-                    @using (Html.BeginForm("Login", "Library", FormMethod.Get))
-                    {
-                        <input type="submit" value="Login here" style="width:100px"/>
-                        <div class="loginBtn">Login here</div>
-                    }
-                </div>
-            
-
+                <!---
                 <div class="menuBtn">   
-                    @using (Html.BeginForm("Browse", "Library", FormMethod.Get))
+                    using (Html.BeginForm("Browse", "Library", FormMethod.Get))
                     {
                         <input type="submit" value="Browse" style="width:100px"/>
                     
-                        <div class="loginBtn">Login here</div>
+                        
                     }
                 </div>
+                    --->
+
+                <!--
+                <div class="menuBtn">
+                    using (Html.BeginForm("Login", "Library", FormMethod.Get))
+                    {
+                        <input type="submit" value="Login here" style="width:100px"/>
+                       
+                    }
+                </div>
+                    --->
+
+                
+                <a href="~/Library/Browse"><div class="menuBtn">Browse</div></a>
+            
+                <a href="~/Library/Login"><div class="menuBtn">Login</div></a>
             
             </div>
 
