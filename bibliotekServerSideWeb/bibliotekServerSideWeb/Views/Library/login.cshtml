@@ -5,12 +5,12 @@
 
 @using (Html.BeginForm("Login", "Library", FormMethod.Get))
 {
-    <div style="text-align:center; margin-top:150px;">
+    <div id="loginContent">
 
         <h1>Login!</h1>
         <form>
 
-            <div>        
+            <div id="loginInfoContent">        
                    
                 <div><input type="text" name="user" placeholder="Username" /></div>
                 <div><input type="text" name="pass" placeholder="Password" /></div>
