@@ -3,29 +3,42 @@
 }
 
 
-
-<div style="text-align:center">
+<div id="indexBody">
 
     <h1>UniversitetsBiblioteket</h1>
 
-    <div>
-        @using (Html.BeginForm("Login", "Library", FormMethod.Get))
-        {
-            <input type="submit" value="Login here" style="width:100px"/>
-        }
+    <div id="menuHolder">
+        <div>
+            <div class="menuBtn">
+                @using (Html.BeginForm("Login", "Library", FormMethod.Get))
+                {
+                    <!---<input type="submit" value="Login here" style="width:100px"/>--->
+                    <div class="loginBtn">Login here</div>
+                }
+            </div>
+            
 
-        @using (Html.BeginForm("Browse", "Library", FormMethod.Get))
-        {
-            <input type="submit" value="Browse" style="width:100px"/>
-        }
-    </div>
+            <div class="menuBtn">
+                @using (Html.BeginForm("Browse", "Library", FormMethod.Get))
+                {
+                    <!---<input type="submit" value="Browse" style="width:100px"/>--->
+                    
+                    <div class="loginBtn">Login here</div>
+                }
+            </div>
+            
+        </div>
 
-    <div>
-        @using (Html.BeginForm("Search", "Library", FormMethod.Get))
-        {
-            <input type="text" name="query" placeholder="Sök på titel eller författare" style="width:200px" />
-            <input type="submit" value="Sök" />
-        }
+        <div>
+            <div class="menuSearchBar">
+                @using (Html.BeginForm("Search", "Library", FormMethod.Get))
+                {
+                    <input type="text" name="query" placeholder="Sök på titel eller författare" style="width:200px" />
+                    <input type="submit" value="Sök" />
+                }
+            </div>
+        </div>
     </div>
+    
 
 </div>

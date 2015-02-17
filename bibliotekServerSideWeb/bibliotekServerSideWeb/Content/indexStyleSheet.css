@@ -1,0 +1,23 @@
+﻿#indexBody {
+    text-align:center;
+}
+
+#menuHolder {
+    margin:100px 25% 25%;
+    height:500px;
+    border:1px solid black;
+}
+
+.menuBtn {
+    float:left;
+}
+
+.menuSearchBar {
+    float:right;
+}
+
+.loginBtn {
+    height:50px;
+    width:100px;
+
+}
