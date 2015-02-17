@@ -2,10 +2,16 @@
     text-align:center;
 }
 
-#menuHolder {
-    margin:100px 25% 25%;
+#all {
     height:500px;
+    border:1px solid green;
+    margin:10px 20% 20%;
+}
+
+#menuHolder {
+    margin-top:50px;
     border:1px solid black;
+    height:25px;
 }
 
 .menuBtn {
@@ -19,5 +25,9 @@
 .loginBtn {
     height:50px;
     width:100px;
+}
 
+#content {
+    border:1px solid red;
+    height:300px;
 }

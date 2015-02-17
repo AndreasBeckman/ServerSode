@@ -2,43 +2,48 @@
     ViewBag.Title = "Universitetsbiblioteket";
 }
 
-
 <div id="indexBody">
+    <div id="all">
 
-    <h1>UniversitetsBiblioteket</h1>
+        <h1>UniversitetsBiblioteket</h1>
 
-    <div id="menuHolder">
-        <div>
-            <div class="menuBtn">
-                @using (Html.BeginForm("Login", "Library", FormMethod.Get))
-                {
-                    <!---<input type="submit" value="Login here" style="width:100px"/>--->
-                    <div class="loginBtn">Login here</div>
-                }
-            </div>
+        <div id="menuHolder">
+            <div>
+                <div class="menuBtn">
+                    @using (Html.BeginForm("Login", "Library", FormMethod.Get))
+                    {
+                        <input type="submit" value="Login here" style="width:100px"/>
+                        <div class="loginBtn">Login here</div>
+                    }
+                </div>
             
 
-            <div class="menuBtn">
-                @using (Html.BeginForm("Browse", "Library", FormMethod.Get))
-                {
-                    <!---<input type="submit" value="Browse" style="width:100px"/>--->
+                <div class="menuBtn">   
+                    @using (Html.BeginForm("Browse", "Library", FormMethod.Get))
+                    {
+                        <input type="submit" value="Browse" style="width:100px"/>
                     
-                    <div class="loginBtn">Login here</div>
-                }
-            </div>
+                        <div class="loginBtn">Login here</div>
+                    }
+                </div>
             
+            </div>
+
+            <div>
+                <div class="menuSearchBar">
+                    @using (Html.BeginForm("Search", "Library", FormMethod.Get))
+                    {
+                        <input type="text" name="query" placeholder="Sök på titel eller författare" style="width:200px" />
+                        <input type="submit" value="Sök" />
+                    }
+                </div>
+            </div>
         </div>
 
-        <div>
-            <div class="menuSearchBar">
-                @using (Html.BeginForm("Search", "Library", FormMethod.Get))
-                {
-                    <input type="text" name="query" placeholder="Sök på titel eller författare" style="width:200px" />
-                    <input type="submit" value="Sök" />
-                }
-            </div>
+        <div id="content">
+        
         </div>
-    </div>
     
 
+    </div>
 </div>
