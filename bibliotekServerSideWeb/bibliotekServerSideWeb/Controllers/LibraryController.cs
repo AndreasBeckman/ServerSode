@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.SqlClient;
 
 namespace bibliotekServerSideWeb.Controllers
 {
@@ -10,6 +11,26 @@ namespace bibliotekServerSideWeb.Controllers
     {
         //
         // GET: /Library/
+        string sqlLoginStr = "user id=sa;" + "password=I will study M0RE!;" + "server=193.10.30.7;" + "Trusted_Connection=yes;" + "Database=DBlib;" + "connection timeout=10;";
+
+        public bool getData()
+        {
+            SqlConnection sqlConnection = new SqlConnection(sqlLoginStr);
+
+            try
+            {
+                sqlConnection.Open();
+                System.Diagnostics.Debug.WriteLine("det fungerar!");
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine("det fungerar inte!!!!");
+            }
+
+
+            return true;
+        }
+
 
         public ActionResult Index()
         {
@@ -25,6 +46,7 @@ namespace bibliotekServerSideWeb.Controllers
 
         public ActionResult Login()
         {
+            getData();
             string user = Request.QueryString.Get("user");
             string pass = Request.QueryString.Get("pass");
             string perm = Request.QueryString.Get("permission");
