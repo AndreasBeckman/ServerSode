@@ -69,7 +69,7 @@ namespace bibliotekServerSideWeb.Controllers
 
         public ActionResult Browse()
         {
-            return View("browse");
+            return View("search");
         }
 
         public ActionResult Admin()
