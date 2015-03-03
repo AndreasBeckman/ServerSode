@@ -25,6 +25,7 @@ namespace bibliotekServerSideWeb.Controllers
             catch (Exception e)
             {
                 System.Diagnostics.Debug.WriteLine("det fungerar inte!!!!");
+                return false;
             }
 
 
@@ -46,18 +47,22 @@ namespace bibliotekServerSideWeb.Controllers
 
         public ActionResult Login()
         {
-            getData();
-            string user = Request.QueryString.Get("user");
-            string pass = Request.QueryString.Get("pass");
-            string perm = Request.QueryString.Get("permission");
+            if (getData())
+            {
+                string user = Request.QueryString.Get("user");
+                string pass = Request.QueryString.Get("pass");
+                string perm = Request.QueryString.Get("permission");
 
-            if (perm == "borrower")
-                return View("borrower");
+                if (perm == "borrower")
+                    return View("borrower");
 
-            if (perm == "admin")
-                return View("admin");
+                if (perm == "admin")
+                    return View("admin");
+                else
+                    return View("login");
+            }
             else
-                return View("login");
+                return View("Index");
         }
 
         public ActionResult Browse()
