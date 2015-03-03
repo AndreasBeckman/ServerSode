@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.SqlClient;
+using System.Web.Configuration;
 
 namespace bibliotekServerSideWeb.Controllers
 {
@@ -11,15 +12,16 @@ namespace bibliotekServerSideWeb.Controllers
     {
         //
         // GET: /Library/
-        string sqlLoginStr = "user id=sa;" + "password=I will study M0RE!;" + "server=localhost;" + "Trusted_Connection=yes;" + "Database=DBlib;" + "connection timeout=10;";
+        //string sqlLoginStr = "user id=sa;" + "password=I will study M0RE!;" + "server=193.10.30.7/TESTSERVER/SQLEXPRESS;" + "Trusted_Connection=yes;" + "Database=DBlib;" + "connection timeout=10;";
 
         public bool getData()
         {
-            SqlConnection sqlConnection = new SqlConnection(sqlLoginStr);
-
+            SqlConnection sqlConnection = new SqlConnection(Data.ConnectionString);
+            SqlConnection sqlConnection2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["library2"].ConnectionString);
+             
             try
             {
-                sqlConnection.Open();
+                sqlConnection2.Open();
                 System.Diagnostics.Debug.WriteLine("det fungerar!");
             }
             catch (Exception e)
@@ -64,7 +66,7 @@ namespace bibliotekServerSideWeb.Controllers
                     return View("login");
             }
             else
-                return View("Index");
+                return View("borrower");
         }
 
         public ActionResult Browse()
