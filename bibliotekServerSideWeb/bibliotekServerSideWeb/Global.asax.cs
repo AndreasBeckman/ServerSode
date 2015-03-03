@@ -19,7 +19,7 @@ namespace bibliotekServerSideWeb
         {
             AreaRegistration.RegisterAllAreas();
 
-            Data.ConnectionString = WebConfigurationManager.ConnectionStrings["library"].ConnectionString;
+            Data.ConnectionString = WebConfigurationManager.ConnectionStrings["library2"].ConnectionString;
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
