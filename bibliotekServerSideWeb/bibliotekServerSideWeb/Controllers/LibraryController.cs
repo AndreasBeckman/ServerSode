@@ -11,7 +11,7 @@ namespace bibliotekServerSideWeb.Controllers
     {
         //
         // GET: /Library/
-        string sqlLoginStr = "user id=sa;" + "password=I will study M0RE!;" + "server=193.10.30.7;" + "Trusted_Connection=yes;" + "Database=DBlib;" + "connection timeout=10;";
+        string sqlLoginStr = "user id=sa;" + "password=I will study M0RE!;" + "server=localhost;" + "Trusted_Connection=yes;" + "Database=DBlib;" + "connection timeout=10;";
 
         public bool getData()
         {
