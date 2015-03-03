@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.SqlClient;
+using System.Web.Configuration;
 
 namespace bibliotekServerSideWeb.Controllers
 {
@@ -16,10 +17,11 @@ namespace bibliotekServerSideWeb.Controllers
         public bool getData()
         {
             SqlConnection sqlConnection = new SqlConnection(Data.ConnectionString);
-
+            SqlConnection sqlConnection2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["library2"].ConnectionString);
+             
             try
             {
-                sqlConnection.Open();
+                sqlConnection2.Open();
                 System.Diagnostics.Debug.WriteLine("det fungerar!");
             }
             catch (Exception e)
