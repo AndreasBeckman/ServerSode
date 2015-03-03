@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Web.Configuration;
 
 namespace bibliotekServerSideWeb
 {
@@ -17,6 +18,8 @@ namespace bibliotekServerSideWeb
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+
+            Data.ConnectionString = WebConfigurationManager.ConnectionStrings["library"].ConnectionString;
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
