@@ -24,7 +24,9 @@ namespace bibliotekServerSideWeb.Controllers
             }
             catch (Exception e)
             {
-                System.Diagnostics.Debug.WriteLine("det fungerar inte!!!!");
+                System.Diagnostics.Debug.WriteLine("-----------------------------------------------------");
+                System.Diagnostics.Debug.WriteLine("This is the problem:");
+                System.Diagnostics.Debug.WriteLine(e.ToString());
                 return false;
             }
 
