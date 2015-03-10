@@ -119,7 +119,6 @@ C:\Users\bean1070\Desktop\ServerSode\bibliotekServerSideWeb\bibliotekServerSideW
 \\psf\Home\Documents\GitHub\ServerSode\bibliotekServerSideWeb\bibliotekServerSideWeb\bin\System.Web.WebPages.xml
 \\psf\Home\Documents\GitHub\ServerSode\bibliotekServerSideWeb\bibliotekServerSideWeb\bin\System.Web.WebPages.Deployment.xml
 \\psf\Home\Documents\GitHub\ServerSode\bibliotekServerSideWeb\bibliotekServerSideWeb\bin\System.Web.WebPages.Razor.xml
-\\psf\Home\Documents\GitHub\ServerSode\bibliotekServerSideWeb\bibliotekServerSideWeb\obj\Debug\bibliotekServerSideWeb.csprojResolveAssemblyReference.cache
 \\psf\Home\Documents\GitHub\ServerSode\bibliotekServerSideWeb\bibliotekServerSideWeb\obj\Debug\bibliotekServerSideWeb.dll
 \\psf\Home\Documents\GitHub\ServerSode\bibliotekServerSideWeb\bibliotekServerSideWeb\obj\Debug\bibliotekServerSideWeb.pdb
 C:\Github\ServerSode\bibliotekServerSideWeb\bibliotekServerSideWeb\bin\bibliotekServerSideWeb.dll
