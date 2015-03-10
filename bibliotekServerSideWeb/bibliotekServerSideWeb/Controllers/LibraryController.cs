@@ -57,26 +57,7 @@ namespace bibliotekServerSideWeb.Controllers
 
         public ActionResult Login()
         {
-            SqlConnection connect = new SqlConnection(Data.ConnectionString);
-
-            try
-            {
-                SqlCommand cmd = new SqlCommand("SELECT * FROM AUTHOR", connect);
-                SqlDataReader reader = null;
-
-
-
-                connect.Open();
-
-                reader = cmd.ExecuteReader();
-                reader.Read();
-                id = "hej då";
-
-                connect.Close();
-            }
-            catch (Exception e)
-            {
-            }
+            id = "hej då";
 
             string user = Request.QueryString.Get("user");
             string pass = Request.QueryString.Get("pass");
