@@ -10,6 +10,7 @@ namespace bibliotekServerSideWeb.Controllers
 {
     public class LibraryController : Controller
     {
+        string id = "";
         //
         // GET: /Library/
         //string sqlLoginStr = "user id=sa;" + "password=I will study M0RE!;" + "server=193.10.30.7/TESTSERVER/SQLEXPRESS;" + "Trusted_Connection=yes;" + "Database=DBlib;" + "connection timeout=10;";
@@ -29,7 +30,7 @@ namespace bibliotekServerSideWeb.Controllers
 
                 reader = cmd.ExecuteReader();
                 reader.Read();
-                ViewBag.AuthorReader = reader["Aid"].ToString();
+                id = reader["Aid"].ToString();
 
                 sqlConnection.Close();
             }
@@ -60,14 +61,14 @@ namespace bibliotekServerSideWeb.Controllers
             string user = Request.QueryString.Get("user");
             string pass = Request.QueryString.Get("pass");
             string perm = Request.QueryString.Get("permission");
-
+            ViewBag.AuthorReader = id;
             if (perm == "borrower")
-                return View("borrower");
+                return View("Borrower");
 
             if (perm == "admin")
-                return View("admin");
+                return View("Admin");
             else
-                return View("login");
+                return View("Login");
         }
 
         public ActionResult Browse()
