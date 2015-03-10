@@ -28,8 +28,7 @@ namespace bibliotekServerSideWeb.Controllers
                 sqlConnection.Open();
 
                 reader = cmd.ExecuteReader();
-
-                System.Diagnostics.Debug.WriteLine(reader.ToString());
+                ViewBag.AuthorReader = reader.ToString();
 
                 sqlConnection.Close();
             }
@@ -38,17 +37,12 @@ namespace bibliotekServerSideWeb.Controllers
                 return false;
             }
 
-
-
-            
-
             return true;
         }
 
 
         public ActionResult Index()
         {
-            getData()
             return View();
         }
 
@@ -61,7 +55,7 @@ namespace bibliotekServerSideWeb.Controllers
 
         public ActionResult Login()
         {
-            
+            getData();
             string user = Request.QueryString.Get("user");
             string pass = Request.QueryString.Get("pass");
             string perm = Request.QueryString.Get("permission");

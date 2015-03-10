@@ -223,7 +223,6 @@
     <Content Include="Views\Library\Index.cshtml" />
     <Content Include="Views\Library\search.cshtml" />
     <Content Include="Views\Library\login.cshtml" />
-    <Content Include="Views\Library\browse.cshtml" />
     <Content Include="Views\Library\borrower.cshtml" />
     <Content Include="Views\Library\admin.cshtml" />
     <Content Include="Views\Library\AuthorAdmin.cshtml" />
@@ -254,7 +253,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51630</DevelopmentServerPort>
+          <DevelopmentServerPort>50339</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
