@@ -57,12 +57,32 @@ namespace bibliotekServerSideWeb.Controllers
 
         public ActionResult Login()
         {
-            id = "idDeclared instead";
+            SqlConnection connect = new SqlConnection(Data.ConnectionString);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SELECT * FROM AUTHOR", connect);
+                SqlDataReader reader = null;
+
+
+
+                connect.Open();
+
+                reader = cmd.ExecuteReader();
+                reader.Read();
+                ViewBag.AuthorReader = "testinside";
+
+                connect.Close();
+            }
+            catch (Exception e)
+            {
+            }
+
+
             string user = Request.QueryString.Get("user");
             string pass = Request.QueryString.Get("pass");
             string perm = Request.QueryString.Get("permission");
 
-            ViewBag.AuthorReader = id;
 
             if (perm == "borrower")
                 return View("Borrower");
