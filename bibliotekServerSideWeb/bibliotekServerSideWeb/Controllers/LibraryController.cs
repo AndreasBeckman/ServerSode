@@ -28,7 +28,8 @@ namespace bibliotekServerSideWeb.Controllers
                 sqlConnection.Open();
 
                 reader = cmd.ExecuteReader();
-                ViewBag.AuthorReader = reader.ToString();
+                reader.Read();
+                ViewBag.AuthorReader = reader["Aid"].ToString();
 
                 sqlConnection.Close();
             }
