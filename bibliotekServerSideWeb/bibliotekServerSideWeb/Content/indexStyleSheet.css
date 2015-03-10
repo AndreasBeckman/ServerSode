@@ -46,7 +46,6 @@
 
 
 #loginContent {
-    border:1px solid black;
     margin:150px 35% 300px 35%;
     text-align:center;
     height:300px;
@@ -54,4 +53,6 @@
 
 #loginInfoContent {
     margin-top:50px;
+    color:black;
 }
+

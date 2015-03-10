@@ -13,25 +13,29 @@ namespace bibliotekServerSideWeb.Controllers
         //
         // GET: /Library/
         //string sqlLoginStr = "user id=sa;" + "password=I will study M0RE!;" + "server=193.10.30.7/TESTSERVER/SQLEXPRESS;" + "Trusted_Connection=yes;" + "Database=DBlib;" + "connection timeout=10;";
-
+        //ServerSide10
         public bool getData()
         {
             SqlConnection sqlConnection = new SqlConnection(Data.ConnectionString);
-            SqlConnection sqlConnection2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["library2"].ConnectionString);
              
             try
             {
-                sqlConnection2.Open();
-                System.Diagnostics.Debug.WriteLine("det fungerar!");
+                SqlCommand cmd = new SqlCommand("SELECT * FROM AUTHOR", sqlConnection);
+                SqlDataReader reader = null;
+
+
+
+                sqlConnection.Open();
+
+                reader = cmd.ExecuteReader();
+                ViewBag.AuthorReader = reader.ToString();
+
+                sqlConnection.Close();
             }
             catch (Exception e)
             {
-                System.Diagnostics.Debug.WriteLine("-----------------------------------------------------");
-                System.Diagnostics.Debug.WriteLine("This is the problem:");
-                System.Diagnostics.Debug.WriteLine(e.ToString());
                 return false;
             }
-
 
             return true;
         }
@@ -51,27 +55,23 @@ namespace bibliotekServerSideWeb.Controllers
 
         public ActionResult Login()
         {
-            if (getData())
-            {
-                string user = Request.QueryString.Get("user");
-                string pass = Request.QueryString.Get("pass");
-                string perm = Request.QueryString.Get("permission");
+            getData();
+            string user = Request.QueryString.Get("user");
+            string pass = Request.QueryString.Get("pass");
+            string perm = Request.QueryString.Get("permission");
 
-                if (perm == "borrower")
-                    return View("borrower");
-
-                if (perm == "admin")
-                    return View("admin");
-                else
-                    return View("login");
-            }
-            else
+            if (perm == "borrower")
                 return View("borrower");
+
+            if (perm == "admin")
+                return View("admin");
+            else
+                return View("login");
         }
 
         public ActionResult Browse()
         {
-            return View("search");
+            return View("browse");
         }
 
         public ActionResult Admin()
