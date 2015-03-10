@@ -70,7 +70,7 @@ namespace bibliotekServerSideWeb.Controllers
 
                 reader = cmd.ExecuteReader();
                 reader.Read();
-                ViewBag.AuthorReader = "testinside";
+                ViewBag.AuthorReader = reader["Aid"].ToString();
 
                 connect.Close();
             }
