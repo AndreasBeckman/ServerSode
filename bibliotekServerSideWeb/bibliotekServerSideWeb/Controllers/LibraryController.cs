@@ -61,7 +61,7 @@ namespace bibliotekServerSideWeb.Controllers
             string user = Request.QueryString.Get("user");
             string pass = Request.QueryString.Get("pass");
             string perm = Request.QueryString.Get("permission");
-            ViewBag.AuthorReader = id;
+            ViewBag.AuthorReader = "hej";
             if (perm == "borrower")
                 return View("Borrower");
 
