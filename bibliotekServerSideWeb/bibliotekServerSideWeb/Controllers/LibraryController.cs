@@ -57,13 +57,12 @@ namespace bibliotekServerSideWeb.Controllers
 
         public ActionResult Login()
         {
-            id = "hej då";
 
             string user = Request.QueryString.Get("user");
             string pass = Request.QueryString.Get("pass");
             string perm = Request.QueryString.Get("permission");
 
-            ViewBag.AuthorReader = id;
+            ViewBag.AuthorReader = "hej då2222";
 
             if (perm == "borrower")
                 return View("Borrower");
