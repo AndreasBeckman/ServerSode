@@ -17,22 +17,22 @@ namespace bibliotekServerSideWeb.Controllers
         //ServerSide10
         public bool getData()
         {
-            SqlConnection sqlConnection = new SqlConnection(Data.ConnectionString);
+            SqlConnection connect = new SqlConnection(Data.ConnectionString);
              
             try
             {
-                SqlCommand cmd = new SqlCommand("SELECT * FROM AUTHOR", sqlConnection);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM AUTHOR", connect);
                 SqlDataReader reader = null;
 
 
 
-                sqlConnection.Open();
+                connect.Open();
 
                 reader = cmd.ExecuteReader();
                 reader.Read();
                 id = reader["Aid"].ToString();
 
-                sqlConnection.Close();
+                connect.Close();
             }
             catch (Exception e)
             {
