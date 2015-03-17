@@ -30,13 +30,15 @@ namespace bibliotekServerSideWeb.Controllers
             
             try
             {
+                //SELECT * fROM BOOK WHERE title = 'Data warehousing data mining and OLAP'
+                //LIKE '%" + search + "%'"
                 SqlCommand cmd = new SqlCommand("SELECT * FROM BOOK WHERE title LIKE '%" + search + "%'");
                 SqlDataReader reader = null;
 
                 connect.Open();
                 reader = cmd.ExecuteReader();
                 reader.Read();
-                ViewBag.SearchBook = reader["title"].ToString();
+                ViewBag.SearchBook = reader["Title"].ToString();
 
             }
             catch (Exception e)
