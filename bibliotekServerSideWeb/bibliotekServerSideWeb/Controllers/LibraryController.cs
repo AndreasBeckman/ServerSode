@@ -28,6 +28,8 @@ namespace bibliotekServerSideWeb.Controllers
             
             SqlConnection connect = new SqlConnection(Data.ConnectionString);
             
+            List<string> bookList = new List<string>();
+
             try
             {
                 //SELECT * fROM BOOK WHERE title = 'Data warehousing data mining and OLAP'
@@ -39,8 +41,11 @@ namespace bibliotekServerSideWeb.Controllers
 
                 connect.Open();
                 reader = cmd.ExecuteReader();
-                reader.Read();
-                ViewBag.SearchBook = reader["Title"].ToString();
+                while (reader.Read())
+                {
+                    bookList.Add(reader["Title"].ToString());
+                }
+                ViewBag.SearchBook = bookList;
 
             }
             catch (Exception e)
