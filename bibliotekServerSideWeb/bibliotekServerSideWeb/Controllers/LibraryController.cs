@@ -47,6 +47,7 @@ namespace bibliotekServerSideWeb.Controllers
             {
                 connect.Close();
             }
+            ViewBag.SearchBook = "eh";
             return View("search");
         }
 
