@@ -45,7 +45,7 @@ namespace bibliotekServerSideWeb.Controllers
             catch (Exception e)
             {
                 //ViewBag.SearchBook = "Something was wrong with the connection, contact an administrator.";
-                ViewBag.SearchBook = e.Message;
+                ViewBag.SearchBook = e.Message; 
             }
             finally 
             {
