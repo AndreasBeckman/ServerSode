@@ -32,7 +32,8 @@ namespace bibliotekServerSideWeb.Controllers
             {
                 //SELECT * fROM BOOK WHERE title = 'Data warehousing data mining and OLAP'
                 //LIKE '%" + search + "%'"
-                SqlCommand cmd = new SqlCommand("SELECT * FROM BOOK WHERE title LIKE '%" + search + "%'");
+                //WHERE title LIKE '%" + search + "%'"
+                SqlCommand cmd = new SqlCommand("SELECT * FROM BOOK");
                 SqlDataReader reader = null;
 
                 connect.Open();
