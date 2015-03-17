@@ -15,33 +15,6 @@ namespace bibliotekServerSideWeb.Controllers
         // GET: /Library/
         //string sqlLoginStr = "user id=sa;" + "password=I will study M0RE!;" + "server=193.10.30.7/TESTSERVER/SQLEXPRESS;" + "Trusted_Connection=yes;" + "Database=DBlib;" + "connection timeout=10;";
         //ServerSide10
-        public bool getData()
-        {
-            SqlConnection connect = new SqlConnection(Data.ConnectionString);
-             
-            try
-            {
-                SqlCommand cmd = new SqlCommand("SELECT * FROM AUTHOR", connect);
-                SqlDataReader reader = null;
-
-
-
-                connect.Open();
-
-                reader = cmd.ExecuteReader();
-                reader.Read();
-                id = "hej då";
-
-                connect.Close();
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
-
-            return true;
-        }
-
 
         public ActionResult Index()
         {
@@ -51,6 +24,28 @@ namespace bibliotekServerSideWeb.Controllers
         public ActionResult Search()
         {
             string search = Request.QueryString.Get("query");
+
+            SqlConnection connect = new SqlConnection(Data.ConnectionString);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SELECT * FROM BOOK WHERE title LIKE '%" + search + "%'");
+                SqlDataReader reader = null;
+
+                connect.Open();
+                reader = cmd.ExecuteReader();
+                reader.Read();
+                ViewBag.SearchBook = reader["title"].ToString();
+
+            }
+            catch (Exception e)
+            { 
+
+            }
+            finally 
+            {
+                connect.Close();
+            }
 
             return View("search");
         }
@@ -64,18 +59,18 @@ namespace bibliotekServerSideWeb.Controllers
                 SqlCommand cmd = new SqlCommand("SELECT * FROM AUTHOR", connect);
                 SqlDataReader reader = null;
 
-
-
                 connect.Open();
 
                 reader = cmd.ExecuteReader();
                 reader.Read();
                 ViewBag.AuthorReader = reader["Aid"].ToString();
-
-                connect.Close();
             }
             catch (Exception e)
             {
+            }
+            finally 
+            {
+                connect.Close();
             }
 
 
