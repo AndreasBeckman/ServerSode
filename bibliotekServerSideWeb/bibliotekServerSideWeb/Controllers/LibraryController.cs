@@ -36,7 +36,7 @@ namespace bibliotekServerSideWeb.Controllers
                 connect.Open();
                 reader = cmd.ExecuteReader();
                 reader.Read();
-                ViewBag.SearchBook = search;
+                ViewBag.SearchBook = "ehhhej";
 
             }
             catch (Exception e)
