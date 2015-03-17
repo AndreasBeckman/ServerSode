@@ -33,7 +33,7 @@ namespace bibliotekServerSideWeb.Controllers
                 //SELECT * fROM BOOK WHERE title = 'Data warehousing data mining and OLAP'
                 //LIKE '%" + search + "%'"
                 //WHERE title LIKE '%" + search + "%'"
-                SqlCommand cmd = new SqlCommand("SELECT * FROM BOOK");
+                SqlCommand cmd = new SqlCommand("SELECT * FROM BOOK WHERE title LIKE '%" + search + "%'");
                 SqlDataReader reader = null;
 
                 connect.Open();
@@ -44,7 +44,8 @@ namespace bibliotekServerSideWeb.Controllers
             }
             catch (Exception e)
             {
-                ViewBag.SearchBook = "Something was wrong with the connection, contact an administrator.";
+                //ViewBag.SearchBook = "Something was wrong with the connection, contact an administrator.";
+                ViewBag.SearchBook = e.Message;
             }
             finally 
             {
