@@ -14,6 +14,7 @@ namespace bibliotekServerSideWeb.Controllers
         //
         // GET: /Library/
         //string sqlLoginStr = "user id=sa;" + "password=I will study M0RE!;" + "server=193.10.30.7/TESTSERVER/SQLEXPRESS;" + "Trusted_Connection=yes;" + "Database=DBlib;" + "connection timeout=10;";
+<<<<<<< HEAD
         //ServerSide10
 
         public ActionResult Index()
@@ -25,6 +26,20 @@ namespace bibliotekServerSideWeb.Controllers
         {
             string search = Request.QueryString.Get("query");
 
+=======
+
+        public bool getData()
+        {
+<<<<<<< HEAD
+            SqlConnection sqlConnection = new SqlConnection(Data.ConnectionString);
+            SqlConnection sqlConnection2 = new SqlConnection(WebConfigurationManager.ConnectionStrings["library2"].ConnectionString);
+             
+            try
+            {
+                sqlConnection2.Open();
+                System.Diagnostics.Debug.WriteLine("det fungerar!");
+=======
+>>>>>>> origin/master
             SqlConnection connect = new SqlConnection(Data.ConnectionString);
 
             try
@@ -37,6 +52,11 @@ namespace bibliotekServerSideWeb.Controllers
                 reader.Read();
                 ViewBag.SearchBook = reader["title"].ToString();
 
+<<<<<<< HEAD
+=======
+                connect.Close();
+>>>>>>> origin/master
+>>>>>>> origin/master
             }
             catch (Exception e)
             { 
@@ -44,14 +64,55 @@ namespace bibliotekServerSideWeb.Controllers
             }
             finally 
             {
+<<<<<<< HEAD
                 connect.Close();
             }
 
+=======
+                System.Diagnostics.Debug.WriteLine("-----------------------------------------------------");
+                System.Diagnostics.Debug.WriteLine("This is the problem:");
+                System.Diagnostics.Debug.WriteLine(e.ToString());
+                return false;
+            }
+
+
+            return true;
+        }
+
+
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult Search()
+        {
+            string search = Request.QueryString.Get("query");
+
+>>>>>>> origin/master
             return View("search");
         }
 
         public ActionResult Login()
         {
+<<<<<<< HEAD
+            if (getData())
+            {
+                string user = Request.QueryString.Get("user");
+                string pass = Request.QueryString.Get("pass");
+                string perm = Request.QueryString.Get("permission");
+
+                if (perm == "borrower")
+                    return View("borrower");
+
+                if (perm == "admin")
+                    return View("admin");
+                else
+                    return View("login");
+            }
+            else
+                return View("borrower");
+=======
             SqlConnection connect = new SqlConnection(Data.ConnectionString);
 
             try
@@ -86,28 +147,14 @@ namespace bibliotekServerSideWeb.Controllers
                 return View("Admin");
             else
                 return View("Login");
+>>>>>>> origin/master
         }
 
         public ActionResult Browse()
         {
-            return View("browse");
+            return View("search");
         }
 
-        public ActionResult Admin()
-        {
-            string micke = Request.QueryString.Get("Admin");
-
-            if(micke == "Author Adminpage")
-                return View("AuthorAdmin");
-
-            if (micke == "Borrower Adminpage")
-                return View("BorrowerAdmin");
-
-            if (micke == "Book Adminpage")
-                return View("BookAdmin");
-
-            else
-                return View("Admin");
-        }
+    
     }
 }
