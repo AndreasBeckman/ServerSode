@@ -34,6 +34,7 @@ namespace bibliotekServerSideWeb.Controllers
                 //LIKE '%" + search + "%'"
                 //WHERE title LIKE '%" + search + "%'"
                 SqlCommand cmd = new SqlCommand("SELECT * FROM BOOK WHERE title LIKE '%" + search + "%'");
+                cmd.Connection = connect;
                 SqlDataReader reader = null;
 
                 connect.Open();
