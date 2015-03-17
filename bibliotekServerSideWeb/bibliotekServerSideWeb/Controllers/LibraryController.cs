@@ -45,7 +45,7 @@ namespace bibliotekServerSideWeb.Controllers
                 {
                     bookList.Add(reader["Title"].ToString());
                 }
-                ViewBag.SearchBook = bookList;
+                ViewBag.SearchBook = bookList[0];
 
             }
             catch (Exception e)
