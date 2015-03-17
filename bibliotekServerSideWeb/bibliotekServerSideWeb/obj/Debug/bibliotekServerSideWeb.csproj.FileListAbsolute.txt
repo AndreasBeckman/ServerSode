@@ -183,3 +183,4 @@ C:\Github\ServerSode\bibliotekServerSideWeb\bibliotekServerSideWeb\obj\Debug\bib
 \\psf\Home\Documents\GitHub\ServerSode\bibliotekServerSideWeb\bibliotekServerSideWeb\bin\System.Web.WebPages.Razor.xml
 \\psf\Home\Documents\GitHub\ServerSode\bibliotekServerSideWeb\bibliotekServerSideWeb\obj\Debug\bibliotekServerSideWeb.dll
 \\psf\Home\Documents\GitHub\ServerSode\bibliotekServerSideWeb\bibliotekServerSideWeb\obj\Debug\bibliotekServerSideWeb.pdb
+\\psf\Home\Documents\GitHub\ServerSode\bibliotekServerSideWeb\bibliotekServerSideWeb\obj\Debug\bibliotekServerSideWeb.csprojResolveAssemblyReference.cache

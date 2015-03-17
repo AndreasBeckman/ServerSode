@@ -29,8 +29,13 @@
             </div>
         </div>
 
-        @ViewBag.SearchBook
-        <div></div>
+        <div>
+            @foreach (var item in ViewBag.SearchBook)
+            {
+                 @item
+            }
+
+        </div>
         
     
 

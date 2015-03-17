@@ -10,7 +10,6 @@ namespace bibliotekServerSideWeb.Controllers
 {
     public class LibraryController : Controller
     {
-        string id = "";
         //
         // GET: /Library/
         //string sqlLoginStr = "user id=sa;" + "password=I will study M0RE!;" + "server=193.10.30.7/TESTSERVER/SQLEXPRESS;" + "Trusted_Connection=yes;" + "Database=DBlib;" + "connection timeout=10;";
@@ -45,7 +44,7 @@ namespace bibliotekServerSideWeb.Controllers
                 {
                     bookList.Add(reader["Title"].ToString());
                 }
-                ViewBag.SearchBook = bookList[0];
+                ViewBag.SearchBook = bookList;
 
             }
             catch (Exception e)
